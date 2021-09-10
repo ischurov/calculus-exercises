@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 5}
+\date{16 сентября 2019}
+\begin{document}
+\section*{Осталось с прошлого семинара}
+\problem
+    Рассмотрим последовательность $a_n=q^n$, где $q\in \bbR$. При каких значениях~$q$ 
+    \items
+        \item последовательность имеет предел? (Какой?) 
+        \item не имеет конечного предела и стремится к $+\infty$? 
+        \item не имеет конечного предела и стремится к $\infty$, но не к
+            $+\infty$? 
+        \item не имеет конечного предела и при этом не стремится к $\infty$?
+    Все утверждения обосновать с помощью определения предела.
+\problem
+    \comment{Это важная задача! Нужно её сделать (не в этот раз, так в
+    следующий.}
+    Рассмотрим последовательность $a_n=\frac{n^2}{2^n}$. Пусть $b_n=a_{n+1}/a_n$.
+    \items
+        \item 
+            Докажите, что найдётся такое $N\in \bbN$ и такое $c<1$, что для
+            всех $n > N$, $b_n < c$.
+        \item 
+            Докажите, что найдётся такое $N \in \bbN$ и такое $M$, что для
+            всех $n>N$, $a_n<Mc^n$. (Подсказка: $a_n = a_1 \cdot b_1 \cdot
+            \ldots \cdot b_{n-1}$.)
+        \item 
+            Докажите, что $\lim\limits_{n\to \infty} a_n =0$.
+\section*{Новые задачи}
+\problem
+    Найти пределы. Если предел равен бесконечности (плюс бесконечности, минус
+    бесконечности), доказать это.
+    \items \multicols 2
+        \item
+            \eq
+                \lim_{n \to \infty} \frac{n^{10}\cdot 2^n}{3^n}
+        \item 
+            \eq
+                \lim_{n\to \infty} \frac{\sqrt[3]{n^2}}{n+1}.
+        \item
+            \eq
+                \lim_{n\to \infty} \frac{\sqrt{n^3}}{n+1}.
+        \item \homework
+            \eq
+                \lim_{n\to \infty} \frac{\sqrt{n^3}}{n^2+n}.
+\problem
+    Найти предел
+    \eq 
+        \lim_{n \to \infty} \frac{200^n}{n!},
+    где $n!=1\times 2 \times \cdots \times n$.
+
+\problem
+    Найти пределы
+    \items \multicols 3
+        \item \homework
+            \eq
+                \lim_{n \to \infty} \frac{n!}{n^n};
+        \item
+            \eq
+                \lim_{n \to \infty} \sqrt[n]{a},\quad a> 0;
+        \item (*) \skiptest
+            \eq
+                \lim_{n \to \infty} \sqrt[n]{n}.
+\problem
+    Докажите, что для всякого $a>0$, $k\in \mathbb N$ и всякого $C>0$ найдётся
+    такое $N$ что для всех $n>N$:
+    \items \multicols 2
+        \item \eq (1+a)^n > Cn^k;
+        \item \homework
+            \eq n! > Ca^n.
+\problem
+    Известно, что 
+    \eq 
+        \lim_{n\to \infty} a_n = a \ge  0.
+    Докажите, что
+    \eq
+        \lim_{n\to \infty} \sqrt{a_n}=\sqrt{a}.
+\begin{definition}
+    Пусть $\\{a_n\\}$ — некоторая последовательность. Пусть $\\{n_k\\}$ — строго
+    возрастающая последовательность натуральных чисел. Последовательность
+    $\\{b_k\\}$, $b_k=a_{n_k}$, $k=1,2,\ldots$ называется
+    \emph{подпоследовательностью} последовательности $\\{a_n\\}$.
+\end{definition}
+\problem
+    Докажите, что если у последовательности есть предел, то у любой её
+    подпоследовательности тоже есть предел, причём такой же. Верно ли обратное?
+\problem
+    Докажите, что
+    $$\lim_{n\to \infty} \frac{\log_2 n}{n}=0.$$
+
+    \noindent \textbf{Подсказка:} пусть $k$ — такое натуральное число, что $2^{k}< n \le
+    2^{k+1}$. (Такое $k$ обязательно найдётся, потому что $2^k \to +\infty$ при $k\to
+    \infty$.) Докажите, что в этом случае $\frac{\log_2 n}{n}\le
+    \frac{k+1}{2^{k}}$.
+
+    \noindent \textbf{Вопрос:} почему нельзя просто взять подпоследовательность $n=2^k$ и
+    воспользоваться предыдущей задачей?
+\problem
+    Докажите, что если $\\{a_n\\}$ — ограниченная последовательность и
+    $$\lim_{n\to \infty} b_n=0,$$
+    то
+    $$\lim_{n\to \infty} a_n b_n=0.$$
+\problem \homework
+    Найдите предел
+    \eq
+        \lim_{n \to \infty} \frac{\sqrt[3]{n^2}\sin n!}{n+1}.
+\problem
+    Найдите
+    \eq
+        \lim_{n\to \infty}\frac{1}{2}\cdot\frac{3}{4}\cdot
+        \frac{5}{6}\cdots\frac{2n-1}{2n}.
+    \noindent \textbf{Подсказка:} докажите, что
+    \eq
+        \frac{1}{2}\cdot\frac{3}{4}\cdot \frac{5}{6}\cdots\frac{2n-1}{2n} <
+        \frac{1}{\sqrt{2n+1}}.
+
+\end{document}
+

@@ -1,0 +1,229 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 20}
+\date{18 ноября 2020}
+\begin{document}
+\problem
+    Пользуясь при необходимости правилом Лопиталя найдите предел
+    \items \multicols 3
+        \item
+           \eq 
+                \lim_{x\to 0} \frac{\sin \sin x}{x};
+        \item
+            \eq
+                \lim_{x\to 0} \frac{\sin x}{x + 1};
+        \item
+            \eq
+                \lim_{x\to 0} \frac{\cos x}{x^2};
+        \item 
+            \eq
+                \lim_{x\to 0} \frac{\cos (x)-1}{x^2};
+        \item \homework
+            \eq
+                \lim_{x\to 0} \frac{e^x-1-x}{x^2};
+        \item
+            \eq
+                \lim_{x\to +\infty} \frac{\ln x}{x}.
+        \item \homework
+            \eq
+                \lim_{x \to 1} \frac{\ln x}{x-1}
+        \item \homework
+            \eq
+                \lim_{x \to 0} \frac{\sin (x^2)}{(\sin x)^2}
+\problem
+    Рассмотрим предел
+    \eq
+        \lim_{x\to \infty} \frac{e^x + e^{-x}}{e^x - e^{-x}}.
+    Применимо ли к нему утвержение из правила Лопиталя? Что получится, если
+    применить правило Лопиталя? Чему равен этот предел?
+\begin{definition}
+    Говорят, что функция $f$ есть \emph{$O$-большое} от функции $g$
+    при\footnote{Аналогично определяются $O(g)$ и $o(g)$ и при $x\to-\infty$,
+    $x\to\infty$, $x\to 0$, $x\to a$.} $x\to+\infty$, если существуют такие
+    константы $C$ и $D$, что для для любых $x>D$ выполнено $|f(x)|\le C|g(x)|$.
+\end{definition}
+\begin{definition}
+    Говорят, что функция $f$ есть \emph{$o$-малое} от функции $g$ при
+    $x\to+\infty$, если $\displaystyle\lim_{x\to+\infty}\frac{f(x)}{g(x)}=0$.
+\end{definition}
+\begin{remark}
+На письме выражение «$f$ есть \emph{$O$-большое} (соответственно, $o$-малое) от $g$» записывается как
+$f(x)=O(g(x))$ (соответственно, $f(x)=o(g(x))$). При этом, однако, следует
+учитывать, что знак равенства здесь — некоторая условность, потому что $O(g(x))$
+и $o(g(x))$ — это не конкретные функции, а множества функций. Например,
+неправда, что если $f_1(x)=O(g(x))$ и $f_2(x)=O(g(x))$, то $f_1(x)=f_2(x)$
+(чего мы обычно ожидаем от знака равенства).  Правильнее было бы
+писать $f(x) \in o(g(x))$ и т.д., но так никто не делает, и мы тоже не будем.
+\end{remark}
+\problem
+    Какие из следующих равенств верны при $x\to+\infty$?
+    \items \multicols 2
+        \item \eq 1=O(1);
+        \item \eq 1=o(1);
+        \item \homework
+            \eq 1=O(1\,000);
+        \item \homework
+            \eq 1=o(1\,000);
+        \item \eq 1=O(x);
+        \item \eq 1=o(x);
+        \item \eq 1=O(0);
+        \item \eq 1=o(0);
+            \homework
+        \item \eq 0=O(1);
+        \item \eq 0=o(1);
+        \item \eq x=O(x^2);
+        \item \eq x=o(x^2);
+        \item \eq x^2=O(x);
+        \item \homework
+            \eq x^2=o(x);
+            
+        \item \homework
+            \eq \ln x=O(x);
+        \item \eq \ln x=o(x);
+        \item \homework
+            \eq x=O(e^x);
+        \item \eq x=o(e^x)
+        \item \eq \sin x=o(x);
+        \item
+            \homework
+            \eq \sin x=O(1);
+        \item 
+            \homework
+            \eq \sin x=o(1);
+        \item \eq x^3+100x^2-23x+5=O(x^3);
+        \item 
+            \homework
+            \eq x^3+100x^2-23x+5=o(x^3);
+        \item 
+            \homework
+            \eq x^3+100x^2-23x+5=o(x^4);
+        \item \eq (x^3+100x^2-23x+5)\sin x=O(x^3);
+        \item 
+            \homework
+            \eq (x^3+100x^2-23x+5)\sin x=o(x^4).
+\problem
+    Какие из следующих равенств верны при $x\to0$?
+    \items \multicols 2
+        \item \eq 1=O(1);
+        \item \eq 1=o(1);
+        \item \eq x=O(x^2);
+        \item \eq x=o(x^2);
+        \item \eq x^2=O(x);
+        \item 
+            \homework
+            \eq x^2=o(x);
+        \item \eq \ln x=O(x);
+        \item 
+            \homework
+            \eq \ln x=o(x);
+        \item \eq x=O(e^x);
+        \item 
+            \homework
+            \eq x=o(e^x)
+        \item 
+            \homework
+            \eq \sin x=o(x);
+        \item \eq \sin x=O(x);
+        \item \eq x^3+100x^2-23x+5=O(x^3);
+        \item 
+            \homework
+            \eq x^3+100x^2-23x+5=o(x^3);
+        \item \eq x^3+100x^2-23x=O(x^3);
+        \item \eq x^3+100x^2-23x=o(x^3);
+        \item \eq x^3+100x^2-23x=O(x);
+        \item 
+            \homework
+            \eq x^3+100x^2-23x=o(x).
+
+\problem
+    Какие из следующих утверждений верны при $x\to+\infty$?
+    \items 
+        \item Если $f(x)=O(g(x))$, то $f(x)=o(g(x))$.
+        \item Если $f(x)=o(g(x))$, то $f(x)=O(g(x))$.
+        \item Если $f(x)=O(g(x))$, то $g(x)=O(f(x))$.
+        \item 
+            \homework
+            Если $f(x)=O(g(x))$, то $f(x)h(x)=O(g(x)h(x))$.
+        \item Если $f_1(x)=O(g(x))$ и $f_2(x)=O(g(x))$, то $f_1(x)+f_2(x)=O(g(x))$.
+        \item 
+            \homework
+            Если $f_1(x)=O(g(x))$ и $f_2(x)=O(g(x))$, то $f_1(x)\cdot f_2(x)=O(g(x))$.
+        \item Если $f_1(x)=o(g(x))$ и $f_2(x)=o(g(x))$, то $f_1(x)+f_2(x)=o(g(x))$.
+        \item Если $f_1(x)=O(g(x))$ и $f_2(x)=o(g(x))$, то $f_1(x)\cdot f_2(x)=o(g(x))$.
+        \item Если $f_1(x)=O(g_1(x))$ и $f_2(x)=O(g_2(x))$, то $f_1(x)\cdot
+            f_2(x)=O(g_1(x)\cdot g_2(x))$.
+        \item Если $f_1(x)=O(g_1(x))$ и $f_2(x)=o(g_2(x))$, то $f_1(x)\cdot
+            f_2(x)=o(g_1(x)\cdot g_2(x))$.
+        \item 
+            \homework
+            Если $f_1(x)=O(g_1(x))$ и $f_2(x)=O(g_2(x))$, то
+            $f_1(x)+f_2(x)=O(g_1(x)+g_2(x))$.
+        \item 
+            \homework
+            Если $f_1(x)=o(g_1(x))$ и $f_2(x)=o(g_2(x))$, то
+            $f_1(x)+f_2(x)=O(g_1(x)+g_2(x))$.
+        \item Если $f(x)=O(g(x))$ и $g(x)=O(h(x))$, то $f(x)=O(h(x))$.
+        \item
+            \homework
+            Если $f(x)=O(g(x))$ и $g(x)=o(h(x))$, то $f(x)=o(h(x))$.
+        \item 
+            \homework
+            Если $f(x)=O(g(x))$ и $g(x)=O(h(x))$, то $f(x)=o(h(x))$.
+        \item 
+            \homework
+            Если $f(x)=o(g(x))$ и $g(x)=O(h(x))$, то $f(x)=o(h(x))$.
+\begin{remark}
+Запись $f(x)=g(x)+o(h(x))$ означает, что $f(x)-g(x)=o(h(x))$. Аналогично, запись
+$f(x)=g(x)+O(h(x))$ означает, что $f(x)-g(x)=O(h(x))$.
+\end{remark}
+\problem
+    Пусть известно, что $f(x)=42 + o(1)$ при $x\to 0$. Найти $\lim_{x\to 0}
+    f(x)$.
+\problem
+    Пусть известно, что $f(x)=1 + 2x + o(x)$ при $x\to 0$. Найти $\lim_{x\to 0}
+    f(x)$.
+\problem
+    Пусть известно, что $f(x)=3x + o(x)$ при $x\to 0$. Найти $\lim_{x\to 0}
+    \frac{f(x)}{x}$.
+\problem
+    Пусть известно, что $f(x)=1 + O(x)$ при $x\to 0$. Найти $\lim_{x\to 0} f(x)$.
+\problem
+    Пусть известно, что $f(x)=1 + 3x + O(x^2)$ при $x\to 0$. 
+    Найти $\lim_{x\to 0} \frac{f(x)-1}{x}$.
+\problem \homework
+    Существует ли функция, являющаяся $o(x)$, но не являющаяся
+    $O(x^2)$
+    \items \multicols 2
+        \item
+            при $x\to 0$;
+        \item
+            при $x\to +\infty$?
+\problem
+    Пусть $f(x)=O(g(x))$. Верно ли, что $2^{f(x)}=O(2^{g(x)})$.
+\problem
+    Пусть $f(y)=y+2y^2+o(y^2)$ при $y\to 0$. Представить $f(3x+x^2)$ в виде
+    $P(x)+o(x^2)$ при $x\to 0$, где $P(x)$ — многочлен степени не больше 2.
+\problem \homework
+    Пусть $f(y)=y+2y^2+o(y^2)$ при $y\to 0$. Представить $f(3x+x^2+o(x^2))$ в
+    виде $P(x)+o(x^2)$ при $x\to 0$, где $P(x)$ — многочлен степени не больше 2.
+    \comment{$3x+x^2+2(3x)^2+o(x^2)=3x+19x^2+o(x^2)$}
+\end{document}
+
+

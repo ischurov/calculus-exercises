@@ -1,0 +1,118 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 10}
+\date{2 октября 2020}
+\begin{document}
+\begin{definition}
+\emph{Проколотой $\eps$-окрестностью} точки $a$ называется множество 
+
+\eq
+    \mathring{U}_{\eps}(a) = (a-\eps, a) \cup (a,  a+\eps).
+Его можно также задать как 
+\eq
+    \mathring{U}_{\eps}(a) = \set{x \in \mathbb R \mid 0 < |x - a| < \eps}.
+    
+\end{definition}
+
+\begin{definition}
+Пусть функция $f$ определена в некоторой проколотой окрестности точки $a$.
+Говорят, что \emph{предел функции $f$ при $x$ стремящемся к $a$ равен $b$},
+если выполняется следующее:
+\eq
+    \forall \eps > 0 \, \exists \delta > 0\, \forall x \in
+    \mathring{U}_\eps(a)\colon |f(x)-b| < \eps.
+Другая запись:
+\eq
+    \forall \eps > 0 \, \exists \delta > 0\, \forall x\colon
+    0 < |x - a| < \delta \Rightarrow |f(x)-b| < \eps.
+\end{definition}
+\begin{remark*}
+    Во всех задачах полезно рисовать графики функций или их эскизы.
+\end{remark*}
+\problem
+    Пользуясь определением доказать следующие утверждения. Указать значение
+    $\delta$, соответствующее $\eps=1/10$.
+    \items \multicols 2
+        \item
+            \eq \lim\limits_{x\to 2} 42 = 42;
+        \item
+            \eq \lim\limits_{x\to 3} x = 3;
+        \item
+            \eq \lim\limits_{x\to 3} x \ne 5;
+        \item
+            \eq \lim\limits_{x\to -1} 4x = -4;
+        \item
+            \eq \lim\limits_{x\to 5} x^2 = 25;
+        \item
+            \eq \lim\limits_{x\to 3} x^2 \ne 7;
+        \item \homework
+            \eq \lim\limits_{x\to 2} x^3 = 8;
+        \item
+            \eq \lim\limits_{x\to 0} |2x| = 0;
+        \item
+            \eq \lim\limits_{x\to 2} (x^2+x-6) = 0;
+        \item
+            \eq \lim\limits_{x\to 2} \frac{x^2+x-6}{x-2} = 5;
+        \item
+            \eq \lim\limits_{x\to 4} \sqrt{x} = 2;
+        \item
+            \eq \lim\limits_{x\to 7} \frac{1}{x} = \frac{1}{7};
+        \item
+            \eq
+                \lim\limits_{x\to 0} \sin x;
+        \item \homework
+            \eq
+                \lim\limits_{x\to 0} \cos x.
+\problem
+    Существует ли предел функции
+    \eq
+        f(x)=
+        \begin{cases}
+            1,& x \ge 0\\\\
+            0,& x < 0
+        \end{cases}
+    при $x \to 0$?
+\problem \homework
+    Найти предел функции
+    \eq
+        f(x)=\begin{cases}
+            x,& x \ne 2 \\\\
+            3,& x = 2
+        \end{cases}
+    при $x\to 2$, если он существует.
+\problem
+    Найти предел функции Дирихле
+    \eq
+        f(x)=\begin{cases}
+            1,& x \in \mathbb Q \\\\
+            0,& x \not \in \mathbb Q
+        \end{cases}
+    при $x\to \sqrt{2}$, если он существует.
+\problem
+    Найти предел
+    \items \multicols 2
+        \item
+            \eq
+                \lim\limits_{x\to 0}\cos \frac{2\pi}{x},
+        \item
+            \eq
+                \lim\limits_{x\to 0}x \cos \frac{2\pi}{x}
+    если он существует.
+\end{document}
+
+

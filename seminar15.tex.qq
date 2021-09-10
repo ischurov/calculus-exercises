@@ -1,0 +1,161 @@
+\documentclass[a4paper,12pt]{article}
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 15}
+\date{28 октября 2020}
+\begin{document}
+\problem
+    Найти производную функции, пользуясь определением:
+    \items \multicols 3
+        \item $c$, $c \in \mathbb R$.
+        \item $cx$, $c \in \mathbb R$;
+        \item $x^n$, $n\in \mathbb N$;
+        \item \homework $x^{-1}$;
+            \comment{$-x^{-2}$}
+        \item \homework $x^{-n}$, $n\in \mathbb N$;
+            \comment{$-nx^{-n-1}$}
+        \item \homework $\sqrt{x}$;
+            \comment{$\frac{1}{2\sqrt{x}}$}
+        \item $e^{x}$;
+        \item $\sin x$;
+        \item \homework $\cos x$.
+            \comment{$-\sin x$}
+\problem
+    Для данного графика функции построить эскиз графика производной этой
+    функции.\footnote{Картинки нарисованы Ю.~Г.~Кудряшовым}
+    \items \multicols 2
+        \item
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1.2) -- (0, 1.2);
+                \draw[graph] plot[domain=-3.5:3.5,smooth,samples=200] (\x,
+                     {-sin(180*\x+45)});
+            \end{tikzpicture}
+        \item
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1.2) -- (0, 1.2);
+                \draw[graph] (-3, 1) cos (-2.5, 0) sin (-2, -1) cos (-1.5, 0)
+                    sin (-1, 1) -- (1, 1) cos (1.5, 0) sin (2, -1) cos (2.5, 0) sin
+                    (3, 1);
+            \end{tikzpicture}
+        \item \homework
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1.2) -- (0, 1.2);
+                \draw[graph] (-3, -1) parabola bend (-2.5, 1) (-2, -1) -- (-1,
+                    -1) -- (1, 1) parabola bend (2, -1) (3, 1);
+            \end{tikzpicture}
+        \item \homework
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1) -- (0, 1.2);
+                \draw[graph] plot[domain=-3.3:3.3,smooth,samples=200] (\x,
+                    {(\x-3)*(\x+1.7)*(\x-1)*(\x+2.7)/30});
+            \end{tikzpicture}
+        \item
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1.2) -- (0, 2);
+                \draw[graph] plot[domain=0:3.3,smooth,samples=200] (\x, {sqrt(\x)});
+            \end{tikzpicture}
+        \item \homework
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -1.7) -- (0, 1.7);
+                \draw[graph] plot[domain=-3.3:3.3,smooth,samples=200] (\x,
+                    {-rad(atan(\x))});
+            \end{tikzpicture}
+        \item \homework
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline=(current bounding box.center)]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -0.5) -- (0, 3);
+                \draw[graph] plot[domain=-3.3:3.3,smooth,samples=200] (\x, {exp(\x/2)/2});
+            \end{tikzpicture}
+        \item
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline=(current bounding box.center)]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -2) -- (0, 1.5);
+                \draw[graph] plot[domain=0.1:3.3,smooth,samples=200] (\x, {ln(\x)});
+            \end{tikzpicture}
+        \item \homework
+            \begin{tikzpicture}[x=6mm,y=6mm,baseline={(0,0)}]
+                \draw[->] (-3.5, 0) -- (3.5, 0);
+                \draw[->] (0, -0.5) -- (0, 1.5);
+                \draw[graph] plot[domain=-3.3:3.3,smooth,samples=200] (\x,
+                {exp(-\x*\x/2)});
+            \end{tikzpicture}
+
+\problem
+    Существует ли $f'(0)$? Если да, найти её.
+    \items \multicols 2
+        \item 
+            $f(x)=|x^3|$;
+        \item \homework
+            $f(x)=|x|+x$;
+            \comment{Не существует}
+        \item  \homework
+            $f(x)=\sqrt{|x|}$;
+            \comment{Не существует}
+        \item
+            \eq
+                f(x)=
+                \begin{cases}
+                    \sin \frac{1}{x},& x\ne 0\\\\
+                    0,& x = 0
+                \end{cases}
+        \item 
+            \eq
+                f(x)=
+                \begin{cases}
+                    x \sin \frac{1}{x},& x\ne 0\\\\
+                    0,& x = 0
+                \end{cases}
+        \item 
+            \eq
+                f(x)=
+                \begin{cases}
+                    x^2 \sin \frac{1}{x},& x\ne 0\\\\
+                    0,& x = 0
+                \end{cases}
+        \item $f(x)$ — функция Дирихле.
+        \item \homework $f(x)=x \mathcal D(x)$, где $\mathcal D(x)$ — функция Дирихле.
+            \comment{Не существует}
+        \item \homework $f(x)=x^2 \mathcal D(x)$.
+            \comment{Существует, равна 0}
+\problem
+    Найти уравнение касательной к графику функции в данной точке. Построить
+    график функции и касательную.
+    \items \multicols 2
+        \item
+            \eq f(x)=x^2\quad (2, 4);
+        \item \homework
+            \eq f(x)=\sqrt{x}\quad (4, 2);
+        \item
+            \eq f(x)=\sin x\quad (0, 0);
+        \item
+            \eq f(x)=\sin 3x\quad (0, 0);
+        \item \homework 
+            \eq f(x)=2\sin x\quad (0, 0);
+        \item
+            \eq f(x)=e^x \quad (0, 1);
+\begin{definition}
+Функция $f$ называется \emph{чётной}, если $f(x)=f(-x)$ для всех $x$ из области
+определения. Функция $f$ называется \emph{нечётной}, если $f(-x)=-f(x)$ для всех
+$x$ из области определения.
+\end{definition}
+\problem
+    Пользуясь определением, докажите, что 
+    \items
+        \item
+            производная чётной функции является нечётной функцией;
+        \item \homework
+            производная нечётной функции является чётной функцией.
+    Проиллюстрируйте доказанный факт с помощью графика.
+
+\end{document}
+
+

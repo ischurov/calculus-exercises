@@ -1,0 +1,220 @@
+\documentclass[a4paper,12pt]{article}
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 16}
+\date{30 октября 2020}
+\begin{document}
+\noindent {\footnotesize Некоторые задачи основаны на книге Stewart, Calculus,
+Early transcedentals}
+
+\begin{theorem}
+Пусть функции $f$ и $g$ дифференцируемы в точке $x$. Тогда
+\begin{enumerate}
+    \item $(f(x)+g(x))'=f'(x)+g'(x)$.
+    \item $(f(x)\cdot g(x))'=f'(x) g(x) + f(x) g'(x)$.
+\end{enumerate}
+\problem \homework
+    Пусть функции $f$ и $g$ дифференцируемы в точке $x$ и $g(x)\ne 0$.
+    Докажите, что тогда
+    \items \multicols 2
+        \item 
+            \eq
+                \left(\frac{1}{g(x)}\right)'=-\frac{g'(x)}{g^2(x)}
+        \item 
+            \eq
+                \left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}
+\end{theorem}
+\begin{theorem}
+    Пусть $f$ дифференцируема в точке $x_0$ и $g$ дифференциурема в точке
+    $y_0=f(x_0)$. Тогда
+    $$
+    g(f(x))'=g'(f(x))f'(x).
+    $$
+\end{theorem}
+\problem
+    Графики функций $f$ и $g$ изображены на картинке. Пусть $u(x)=f(g(x))$,
+    $v(x)=g(f(x))$ и $w(x)=g(g(x))$. Найти следующие производные, если они
+    существуют. Если не существуют, объяснить, почему. 
+
+    \begin{center}
+        \newcommand{\ppicsize}{7mm}
+        \begin{tikzpicture}
+            [x=\ppicsize,y=\ppicsize, xstep=\ppicsize,ystep=\ppicsize]
+            \draw[help lines] (-1, -1) grid (7, 6);
+
+            \draw[->,thick] (-1, 0) -- (7, 0) node[below left] {$x$};
+            \draw[->,thick] (0, -1) -- (0, 6)node[below left] {$y$} ;
+
+            \foreach \xx in {0,...,6}{
+                \node[fill=white,below] at (\xx, -1mm) {$\xx$};
+            }
+            \foreach \yy in {0,...,5}{
+                \node[fill=white,left] at (-1mm, \yy) {$\yy$};
+            }
+            \draw[red, very thick] (-1,1) -- (0,0) -- (2,4) node 
+                 [black, above left] {$f$} -- (7,2.75);
+            \draw[blue, very thick, dashed] (0,6) -- (2,0) node 
+                 [black, above left] {$g$} -- (7, 5*2./3);
+        \end{tikzpicture}
+    \end{center}
+
+    \items \multicols 3
+        \item \eq u'(1);
+        \item \homework \eq v'(1);
+            \comment{Не существует}
+        \item \homework \eq w'(1).
+            \comment{$-2$}
+\problem
+    Может ли такое быть, что $f$ и $g$ не дифференцируемы в точке $x_0$, а 
+    \items \multicols 2
+        \item $f+g$;
+        \item \homework $fg$
+            \comment{Да}
+    \noindent дифференцируема в этой точке?
+\problem
+    Может ли такое быть, что $f$ не дифференцируема в точке $x_0$, $g$
+    дифференцируема в точке $f(x_0)$ и при этом композиция $g\circ f$
+    дифференцируема в $x_0$?
+\problem
+    Представляя $a^x$ в виде $e^{x \ln a}$, найти $(a^x)'$.
+\problem
+    Найти производные следующих функций и укажите область определения этих
+    производных:
+    \items \multicols 3
+        \item 
+            \eq
+                \frac{\sin x}{2\cos x +3};
+        \item 
+            \eq
+                x^2e^x;
+        \item \homework
+            \eq
+                x^2 e^x \sin x
+
+            \comment{$x^{2} e^{x} \\sin{\\left (x \\right )} + x^{2} e^{x}
+                \\cos{\\left (x \\right )} + 2 x e^{x} \\sin{\\left (x \\right)}$}
+        \item \homework
+            \eq
+                \frac{x^3+2x^2+x}{x^2-1};
+
+            \comment{$\\frac{x^{2} - 2 x - 1}{\\left(x - 1\\right)^{2}}$}
+        \item \homework
+            \eq
+                \sin\sqrt{1+x^2};
+
+            \comment{$\\frac{x}{\\sqrt{x^{2} + 1}} \\cos{\\left (\\sqrt{x^{2} +
+                            1} \\right )}$}
+        \item
+            \eq
+                \sin^2 x + \cos^2 x;
+
+            \comment{$0$}
+        \item
+            \eq
+                e^{x^2};
+        \item
+            \eq
+                e^{2^x};
+        \item \homework
+            \eq
+                \sqrt{\frac{x-1}{x+1}};
+
+            \comment{$\\frac{\\sqrt{\\frac{x - 1}{x + 1}}}{x^{2} - 1}$}
+        \item \skiptest \homework
+            \eq
+                e^{2^{\sin x}}\cos^2 x^2;
+
+            \comment{$e^{2^{\sin{\left(x \right)}}} \left(2^{\sin{\left(x
+                            \right)}} \log{\left(2 \right)} \cos{\left(x \right)} \cos{\left(x^{2} \right)}
+                    - 4 x \sin{\left(x^{2} \right)}\right) \cos{\left(x^{2}
+                    \right)}$}
+        \item \skiptest \homework
+            \eq
+                \sqrt{x+\sqrt{x+\sqrt{x}}};
+
+            \comment{$\frac{4 \sqrt{x} \sqrt{\sqrt{x} + x} + 2 \sqrt{x} + 1}{8 \sqrt{x} \sqrt{\sqrt{x} + x} \sqrt{x + \sqrt{\sqrt{x} + x}}}$}
+        \item 
+            \eq
+                \begin{cases}
+                    \sin \frac {1}{x}, & x\neq 0 \\\\
+                    0, & x= 0
+                \end{cases}
+        \item 
+            \eq
+                \begin{cases}
+                    x \sin \frac {1}{x}, & x\neq 0 \\\\
+                    0, & x= 0
+                \end{cases}
+        \item 
+            \eq
+                \begin{cases}
+                    x^2 \sin \frac {1}{x}, & x\neq 0 \\\\
+                    0, & x= 0
+                \end{cases}
+        \item
+            \eq
+                \begin{cases}
+                    e^{-\frac{1}{x}}, & x > 0 \\\\
+                    0, & x \le 0
+                \end{cases}
+        \item \homework
+            \eq
+                \begin{cases}
+                    e^{-\frac{1}{x^2}}, & x \ne 0 \\\\
+                    0, & x = 0
+                \end{cases}
+            \comment{$0$}
+\problem
+    Найти такую функцию $f$, что при всех $x\in \mathbb R$
+    \items \multicols 3
+        \item
+            \eq
+                f'(x)=1
+        \item
+            \eq
+                f'(x)=x
+        \item \homework
+            \eq
+                f'(x)=x^2
+            \comment{$x^3/3+C$}
+        \item
+            \eq
+                f'(x)=\sin x
+        \item \homework
+            \eq
+                f'(x)=\cos x
+            \comment{$-\sin x$}
+        \item
+            \eq
+                f'(x)=e^x
+        \item
+            \eq
+                f'(x)=e^{2x}
+        \item
+            \eq
+                f'(x)=f(x)
+        \item \homework
+            \eq
+                f'(x)=2f(x)
+            \comment{$Ce^{2x}$}
+
+\problem
+    Дана парабола~— график функции $y=x^2$. Выясните, из каких точек плоскости
+    к ней можно провести:
+        \begin{enumerate}
+            \item Одну касательную?
+            \item Две касательных?
+            \item Ни одной касательной?
+        \end{enumerate}
+\problem (*) \skiptest
+    Рассмотрим зеркало в форме параболы $y=x^2$.  
+    Докажите, что пучок лучей, параллельных оси $0y$, отразившись от зеркала,
+    собирается в одной точке (фокусе параболы). Найдите эту точку.
+    \comment{$(0,1/4)$}
+        
+\end{document}
+
+

@@ -1,0 +1,99 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{needspace}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 27}
+\date{11 декабря 2020}
+\begin{document}
+{\footnotesize
+
+\noindent Некоторые задачи основаны на учебнике \emph{Stewart J. Calculus, Early
+Transcedentals}.}
+
+\problem
+    При каких значениях $\alpha\in \mathbb R$ интеграл сходится? Найти значение
+    интеграла для всех тех значений $\alpha$, для которых он сходится.
+    \items \multicols 2
+        \item \eq \int_1^\infty \frac{dx}{x^\alpha}
+        \item \eq \int_0^1 \frac{dx}{x^\alpha}
+        \item \eq \int_0^\infty \frac{dx}{x^\alpha}
+        \item \homework 
+            \eq \int_{-\infty}^{\infty} \frac{dx}{x^\alpha}
+\problem
+    Рассмотрим пределы
+    \begin{gather*}
+        A=\lim_{t \to 0^+} \int_{-1}^{-t} \frac{dx}{x}+\int_{t}^1 \frac{dx}{x}\\\\
+        B=\lim_{t \to 0^+} \int_{-1}^{-t} \frac{dx}{x} + \int_{t^2}^1
+        \frac{dx}{x}
+    \end{gather*}
+    Покажите, что $A\ne B$.
+
+\begin{remark}
+    Эта задача показывает, что интеграл    
+    $$\int_{-1}^1 \frac{dx}{x}$$
+    действительно не определён, хоть это и интеграл от нечётной функции по
+    симметричному отрезку. Если бы он был
+    определён, было бы логично ожидать, что его значение равно и пределу $A$, и
+    пределу $B$.
+\end{remark}
+\problem
+    Найти значение несобственного интеграла, если интеграл сходится.
+    \items \multicols 2
+        \item \eq \int_{-2}^1 \frac{dx}{\sqrt[3]{x}}
+        \item \eq \int_{-1}^1 \frac{dx}{x\sqrt{|x|}}
+        \item \eq \int_{1}^{\infty} \frac{dx}{x^2+1}
+        \item \eq \int_{1}^{2} \frac{dx}{x^2-1}
+        \item \homework
+            \eq \int_1^\infty xe^{-x^2}\,dx
+        \item \eq \int_1^\infty \frac{\ln x}{x}dx
+        \item \homework
+            \eq \int_{-\infty}^\infty \frac{x^2 \, dx}{9+x^6}
+        \item \eq \int_{-3}^3 \frac{dx}{x^3-x}
+        \item \eq \int_{-1}^0 \frac{e^{1/x}}{x^3}dx
+        \item \homework
+            \eq \int_{0}^1 \frac{e^{1/x}}{x^3}dx
+        \item \eq \int_0^\infty \frac{dx}{\sqrt{x}(1+x)}
+        \item \eq \int_{-\infty}^\infty \frac{x(\cos x+1)}{e^{x^2}}dx
+\problem
+    Сходится ли интеграл?
+    \items \multicols 2
+        \item
+            \eq
+                \int_0^\infty \frac{x\,dx}{x^2+1}
+        \item
+            \eq
+                \int_1^\infty \frac{2+e^{-x}}{x}dx
+        \item \homework
+            \eq
+                \int_1^\infty \frac{x+1}{\sqrt{x^4-x}}dx
+        \item
+            \eq
+                \int_0^\pi\frac{\sin^2 x}{\sqrt{x}} dx
+\problem
+    При каких значениях $\alpha$ интеграл сходится? Найти значение интеграла для
+    тех $\alpha$, при которых он сходится.
+    \items \multicols 2
+        \item \eq \int_0^1 x^\alpha \ln x\,dx
+        \item \homework
+            \eq \int_e^{\infty} \frac{dx}{x(\ln x)^\alpha}
+\problem
+    Найти интеграл
+    \eq
+        \int_0^\infty x^n e^{-x}\,dx
+    для всех $n \in \mathbb N$.
+\problem
+    Доказать равенство
+    \items
+        \item
+            \eq
+                \int_0^\infty x^2 e^{-x^2}\,dx=
+                \frac{1}{2}\int_0^\infty e^{-x^2}\,dx
+        \item
+            \eq
+                \int_0^\infty e^{-x^2}\,dx=\int_0^1\sqrt{-\ln y}\,dy
+        
+\end{document}

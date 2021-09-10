@@ -1,0 +1,161 @@
+\documentclass[a4paper,12pt]{article}
+% autocompile publish
+
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+
+\usepackage{math-hse}
+\title{Семинар 2}
+\date{3 сентября 2021}
+\begin{document}
+\comment{Курсивом выделены комментарии для преподавателей. Они будут отключены в
+итоговой версии, раздаваемой студентам.}
+\problem
+    Пусть $A$ и $B$ — некоторые высказывания. Докажите, что если истинно
+    высказывание $(A\Rightarrow B)\wedge(B\Rightarrow A)$, то высказывания $A$ и
+    $B$ или одновременно истинны, или одновременно ложны. (В этом случае
+    говорят, что они являются \emph{эквивалентными}, пишут $A\Leftrightarrow B$.)
+\problem \homework
+    Докажите, что высказывание $((A\Rightarrow B)\wedge(B\Rightarrow C))
+    \Rightarrow(A\Rightarrow C)$ всегда истинно.
+\problem
+    Рассмотрим отображение $f\colon X \to Y$. Запишите с помощью кванторов
+    $\forall$ и $\exists$, знаков $=$ и $\not =$, импликации $\Rightarrow$,
+    конъюнкции, дизъюнкции, скобок и переменных, следующие утверждения:
+    \items
+        \item Отображение $f$ инъективно.
+        \item Отображение $f$ сюрьективно.
+        \item \homework 
+            Отображение $f$ биективно.
+\problem
+    Даны следующие утверждения и предикаты ($x,y\in \bbR$):
+    \begin{itemize}
+        \\item $A$: Все кошки серые;
+
+        \\item $B(x)$: $x+5=10$;
+
+        \\item $C(x,y)$: $x^2 \le y$;
+
+        \\item $E(x, y)$: $x^2 + y^2=0$.
+    \end{itemize}
+
+    \noindent Среди следующих утверждений укажите истинные:
+    \items \multicols 2
+        \item $A$;
+
+        \item $B(5)$;
+
+        \item $C(x,-1)$;
+
+        \item $A\vee B(5)$;
+
+        \item \homework
+            $A\wedge B(5)$;
+
+        \item $A\Rightarrow B(5)$;
+
+        \item $A\Rightarrow B(10)$;
+
+        \item $\neg C(3,4)$;
+
+        \item $\forall x\in \bbR\colon B(x)$;
+
+        \item $\forall x\in \bbR~ \exists y \in \bbR\colon C(x, y)$;
+
+        \item $\exists y \in \bbR~ \forall x\in \bbR\colon C(x, y)$;
+
+        \item \homework 
+            $\forall x\in \bbR~ \exists y \in \bbR\colon ~\neg C(x,y)$;
+
+        \item $\forall x\in \bbR~ \forall y \in \bbR\colon B(x) \Rightarrow
+            A$;
+
+        \item $\forall x\in \bbR~ \exists y \in \bbR\colon B(x) \Rightarrow
+            E(x, y)$;
+
+        \item $\forall x\in \bbR~ \exists y \in \bbR\colon B(x) \Rightarrow
+            E(x, y)$;
+
+        \item $\exists x\in \bbR~ \exists y \in \bbR\colon B(x) \Rightarrow
+            E(x, y)$;
+
+        \item $\exists x\in \bbR~ \exists y \in \bbR\colon B(x) \wedge 
+            E(x, y)$;
+
+        \item $\forall x \in \bbR~ \forall y \in \bbR \colon C(x,
+            y)\Rightarrow E(x, y)$;
+
+        \item $\forall x \in \bbR~ \forall y \in \bbR \colon E(x,
+            y)\Rightarrow C(x, y)$?
+        
+        \item \homework 
+            $\forall x \in \mathbb R \forall y \in \mathbb R \colon 
+            (C(x, y)\wedge E(x, y)) \Rightarrow \neg B(x)$
+        \item \homework
+            $\forall x \in \mathbb R \exists y \in \mathbb R \colon 
+            B(x)\Rightarrow C(x, y)$
+        \item 
+            $\forall x \in \mathbb R \forall y \in \mathbb R \colon
+            B(x)\Rightarrow B(y)$
+        \item \homework
+            $\forall x \in \mathbb R \exists y \in \mathbb R \colon
+            B(x)\Rightarrow B(y)$
+        \item \homework
+            $\exists x \in \mathbb R \forall y \in \mathbb R \colon
+            B(x)\Rightarrow B(y)$
+\problem
+    \label{pr:triquantor}
+    Пусть $x, y, z \in \bbR$.
+    Какие из следующих утверждений верны?
+    \items \multicols 2
+        \item $\forall x~\forall y~\exists z\colon xy^2 < z$.
+        \item $\forall x~\forall z~\exists y\colon xy^2\le z$.
+        \item $\exists z~\forall x~\exists y\colon xy^2 = z$.
+        \item $\forall z~\exists x~\forall y\colon xy^2 \le z$.
+\problem
+    Записать отрицание к утверждению, не используя знак отрицания. Что верно:
+    утверждение или его отрицание?
+    \items \multicols 2
+        \item $\forall x\colon x^2 > 0$.
+        \item $\forall x~\exists y\colon x^2 > y^2$.
+        \item $\exists x\colon x^2<0$.
+        \item $\exists x~\forall y\colon xy>0$.
+\problem \homework \skiptest
+    Записать отрицания ко всем утверждениям из задачи~\ref{pr:triquantor}, не
+    используя знак отрицания.
+\problem
+    Какие из следующих утверждений верны?
+    \items
+        \item $\forall x \in \bbR \colon x>2 \Rightarrow |x|>2$.
+        \item $\forall x \in \bbR \colon x<2 \Rightarrow |x|<2$.
+        \item $\forall x \in \bbR \colon |x-3|<1 \Rightarrow |x|<4$.
+        \item $\forall x \in \bbR \colon |x-3|>1 \Rightarrow |x|>4$.
+        \item $\forall x~\forall y~\exists z\colon (y>x) \Rightarrow
+            (y>z)\wedge(z>x)$.
+        \item $\forall \eps~\forall x \colon |x-3|<\eps \Rightarrow
+            |x^2-9|<10\eps$.
+        \item $\forall \eps~\forall x \colon |x-3|<\min(\eps, 1) \Rightarrow
+            |x^2-9|<10\eps$.
+        \item (*) $\forall \eps~\exists \delta~\forall x \colon (\delta > 0)\wedge((|x-3|<\delta) \wedge (\eps > 0)
+            \Rightarrow |x^2-9| < \eps)$.
+
+\problem
+    Запишите с помощью кванторов следующие утверждения про натуральные числа $n$
+    и $m$:
+    \items
+        \item $n$ делится на $m$,
+        \item $n$ нечётно,
+        \item $n$ является простым числом,
+        \item $n$ и $m$ взаимно просты.
+    Разрешено использовать только следующие объекты и операции:
+    \begin{itemize}
+        \\item числа;
+        \\item переменные (в т.ч. не перечисленные в условии, если необходимо),
+        \\item проверку включения элемента во множество $ {}\in{} $,
+        \\item множества вещественных, рациональных, целых и натуральных чисел,
+        \\item арифметические операции: только сложение и умножение,
+        \\item сравнение двух чисел: операции $ {} = {} $ и $ {} > {} $.
+        \\item логические операции: конъюнкция, дизъюнкция, отрицание (не должно
+            стоять перед кванторами), импликация.
+    \end{itemize}
+\end{document}

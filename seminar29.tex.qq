@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{needspace}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\newcommand{\ph}{\varphi}
+\title{Семинар 29}
+\date{18 декабря 2019}
+\begin{document}
+{\footnotesize
+\noindent Знаком \homework отмечены задачи или пункты для самостоятельного решения. Их не
+планируется обсуждать на семинаре, но они могут быть включены в самостоятельную
+работу наравне с остальными задачами. (На самом деле, нет, это последний
+семинар.)
+
+\vskip 0.5mm
+
+\problem
+    Найти значение выражения
+    \items \multicols 4
+        \item $(2+3i)(3-2i)$;
+        \item $(1+2i)^3$;
+        \item $1/i$;
+        \item $1/(1+i)$.
+\problem
+    Записать в виде $z=re^{i\ph}$ комплексное число
+    \items \multicols 4
+        \item $1$
+        \item $-1$
+        \item $2i$;
+        \item $i+1$;
+
+\problem
+    Корнем степени $n$ из комплексного числа $z$ называется такое комплексное
+    число $w$, что $w^n=z$. Найти все корни пятой степени из\ 
+    \items
+        \item единицы.
+        \item минус единицы.
+    Нарисовать их на комплексной плоскости.
+
+\problem
+    Найти сумму всех корней пятой степени из единицы.
+
+\problem
+    Найти все решения уравнения (в комплексных числах):
+    \eq
+        z^3=\bar z.
+\problem
+    Докажите, что
+    \items \multicols 2
+        \item
+            \eq \sin z = \frac{e^{iz}-e^{-iz}}{2i}
+        \item \homework
+            \eq \cos z = \frac{e^{iz}+e^{-iz}}{2}
+\problem
+    Существует ли такое комплексное число $z$, что $\sin z = 3$?
+
+\problem
+    Логарифмом комплексного числа $z$ называется такое число $w$, что $e^w=z$.
+    Докажите, что логарифм может быть записан формулой
+    \eq
+        \log z = \log |z| + i \mathop{\mathrm{Arg}} z,
+    где $\mathop{\mathrm{Arg}} z$ — аргумент комплексного числа (то есть число
+    $\ph$ в разложении $z=|z|e^{i\ph}$).
+    Сколько разных значений логарифма существует у ненулевого комплексного
+    числа?
+\end{document}

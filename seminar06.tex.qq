@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 6}
+\date{17 сентября 2020}
+\begin{document}
+\section*{Осталось с прошлого семинара}    
+
+\problem
+    Известно, что 
+    \eq 
+        \lim_{n\to \infty} a_n = a \ge  0.
+    Докажите, что
+    \eq
+        \lim_{n\to \infty} \sqrt{a_n}=\sqrt{a}.
+\begin{definition}
+    Пусть $\\{a_n\\}$ — некоторая последовательность. Пусть $\\{n_k\\}$ — строго
+    возрастающая последовательность натуральных чисел. Последовательность
+    $\\{b_k\\}$, $b_k=a_{n_k}$, $k=1,2,\ldots$ называется
+    \emph{подпоследовательностью} последовательности $\\{a_n\\}$.
+\end{definition}
+\problem
+    Докажите, что если у последовательности есть предел, то у любой её
+    подпоследовательности тоже есть предел, причём такой же. Верно ли обратное?
+\problem
+    Докажите, что
+    $$\lim_{n\to \infty} \frac{\log_2 n}{n}=0.$$
+
+    \noindent \textbf{Подсказка:} пусть $k$ — такое натуральное число, что $2^{k}< n \le
+    2^{k+1}$. (Такое $k$ обязательно найдётся, потому что $2^k \to +\infty$ при $k\to
+    \infty$.) Докажите, что в этом случае $\frac{\log_2 n}{n}\le
+    \frac{k+1}{2^{k}}$.
+
+    \noindent \textbf{Вопрос:} почему нельзя просто взять подпоследовательность $n=2^k$ и
+    воспользоваться предыдущей задачей?
+\problem
+    Докажите, что если $\\{a_n\\}$ — ограниченная последовательность и
+    $$\lim_{n\to \infty} b_n=0,$$
+    то
+    $$\lim_{n\to \infty} a_n b_n=0.$$
+\problem \homework
+    Найдите предел
+    \eq
+        \lim_{n \to \infty} \frac{\sqrt[3]{n^2}\sin n!}{n+1}.
+
+\section*{Арифметика пределов}
+\begin{theorem}
+    Пусть $\lim\limits_{n\to \infty}a_n=A$, $\lim\limits_{n\to \infty}b_n=B$, $A, B \in
+    \mathbb R$. Тогда
+    \begin{enumerate}
+        \item $\lim\limits_{n\to \infty}(a_n + b_n) = A+B$;
+        \item $\lim\limits_{n \to \infty}(a_n \cdot b_n) = A\cdot B$;
+        \item $\lim\limits_{n \to \infty}\frac{1}{a_n}=\frac{1}{A}$ если $A\ne 0$;
+    \end{enumerate}
+\end{theorem}
+Начиная с этого момента этими правилами можно пользоваться, если не оговорено
+обратное. Также можно пользоваться предыдущими задачами.
+\problem
+    Найдите пределы, если они существуют. Если не существуют, докажите. При
+    использовании правил арифметики пределов требуется обосновать их
+    применимость на каждом шаге.
+    \items \multicols 2
+        \item
+            \eq
+                \lim_{n\to \infty}\frac{5n^2-12n}{2n^2+7n-2}
+        \item \homework
+            \eq
+                \lim_{n \to \infty} \frac{n^3+10}{n^2+1000n}
+        \item 
+            \eq
+                \lim\limits_{n\to\infty}\sqrt{\frac{n+1}{n-1}};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty}\frac{2^n+n}{\sqrt{n}-2^n \log_2 n};
+        \item \homework
+            \eq
+                \lim\limits_{n\to\infty}\frac{3n^2-2^{-n}}{n^2-4n+3};
+        \item 
+            \eq
+                \lim\limits_{n\to \infty} \frac{n\ln n+2}{n^2-n+1};
+        \item \homework
+            \eq
+                \lim\limits_{n\to\infty}\frac{\sin (2^n+3^n)}{n};
+        \vskip 0.1em
+        \item 
+            \eq
+                \lim\limits_{n\to\infty}\sqrt{n^2+n}-\sqrt{n^2-1};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty} \frac{2^n + 3^{-n}}{3^n - 2^{-n}};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty} \frac {\sin n +n^3-2^{-n}}{2^n+3};
+        \item \homework
+            \eq
+                \lim\limits_{n\to\infty}\frac{\sqrt{n^5+5}}{n-1};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty} \frac{\sqrt{n^2-3}-\sqrt{n^2+n}}{\sqrt{n^2-5}-\sqrt{n^2-n}};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty} 2^{1/n};
+        \item 
+            \eq
+                \lim\limits_{n\to\infty} \sin n;
+        \item
+            \eq
+                \lim\limits_{n\to \infty} \cos \frac{1}{n};
+        \item \homework
+            \eq
+                \lim\limits_{n\to \infty} \tg \frac{1}{n};
+        \item 
+            \eq \lim\limits_{n\to\infty} \frac {\log_2 n}{\sqrt {n}+1}.
+\end{document}
+

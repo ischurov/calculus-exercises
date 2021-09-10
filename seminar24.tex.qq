@@ -1,0 +1,140 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{needspace}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 24}
+\date{2 декабря 2020}
+\begin{document}
+
+\noindent {\footnotesize Некоторые задачи основаны на учебнике \emph{Stewart J. Calculus, Early
+Transcedentals}.}
+
+\begin{definition}
+    Пусть функция $f$ непрерывна на отрезке $[a, b]$. Её \emph{первообразной}
+    называется такая функция $F$, непрерывная на $[a, b]$ и дифференцируемая на
+    $(a, b)$, что $F'(x)=f(x)$ для всех $x \in (a, b)$.
+\end{definition}
+\begin{theorem}(Формула Ньютона — Лейбница)
+Пусть функция $f$ непрерывна на отрезке $[a, b]$. Тогда
+\begin{enumerate}
+    \\item[1.] Пусть $G(x)=\int_a^x f(\xi)d\xi$. Тогда $G$ — первообразная $f$.
+    \\item[2.] $\int_a^b f(x)dx=F(b)-F(a)$, где $F$ — какая-нибудь первообразная
+        $f$.
+\end{enumerate}
+\end{theorem}
+\needspace{5cm}
+\problem
+    С помощью формулы Ньютона — Лейбница найти следующие интегралы, если они
+    существуют.
+    \items \multicols 3
+        \item 
+            \eq 
+                \int_{0}^1 (2x+4x^3)\, dx;
+        \item
+            \eq
+                \int_1^t \frac{2\,dx}{x};
+        \hidden
+            #TODO
+            \item
+                \eq
+                    \int_{-1}^t \frac{2,dx}{x};
+        \item \homework
+            \eq
+                \int_0^4 \sqrt{x}\, dx;
+            \comment{$\frac{16}{23}$}
+        \item
+            \eq
+                \int_{-1}^2 \frac{1}{x^2}\, dx;
+        \item
+            \eq
+                \int_0^\pi (\sin x+\cos x)\, dx;
+        \item \homework
+            \eq
+                \int_{\ln 2}^{\ln 3}(e^x+e^{-x})\, dx.
+            \comment{$\frac{7}{6}$}
+\problem
+    Пусть 
+    \eq
+        G(x)=\int_0^{\sqrt{x}} e^{-t^2}dt. 
+    Найти $G'(x)$.
+\problem
+    Докажите, что
+    \items \multicols 3
+        \item
+            \eq
+                \int_1^{100} e^{-x^2}dx < \frac{99}{e};
+        \item
+            \eq
+                \int_0^1 e^x \sin x\, dx < 2;
+        \item \homework
+            \eq
+                \int_1^{100} e^{-x^2}dx < \frac{1}{e}.
+
+\problem
+    Найти все возможные функции $F(x)$, определённые на $\mathbb R \setminus
+    \\{0\\}$, для которых справедливо утверждение 
+    \items \multicols 2
+        \item $F'(x)=\frac{1}{x}$ 
+        \item \homework $F'(x)=\frac{1}{x^2}$
+            \comment{Ответ:
+                $\displaystyle
+                    \begin{cases}
+                        -\frac{1}{x}+C_1,& x<0\\\\
+                        \frac{1}{x}+C_2,& x>0
+                    \end{cases}$}
+    \noindent для всех $x\ne 0$.
+
+\needspace{4cm}
+
+\problem
+    Найти площадь области, ограниченной кривыми.
+    \items
+        \item $y=x$ и $y=x^2$;
+        \item $y=x^2$ и $y^2=x$;
+        \item \homework $4x+y^2=12$ и $y=x$;
+            \comment{$\frac{64}{3}$}
+        \item \homework $y=|x|$ и $y=x^2-2$;
+            \comment{$\frac{20}{3}$}
+        \item $y=1/x$, $y=x$ и $y=x/4$ в области $x>0$;
+        \item \homework $y=3x^2$, $y=8x^2$ и $4x+y=4$ в области $x \ge 0$.
+            \comment{$\frac{17}{54}$}
+\problem
+    С помощью формулы замены переменных найти следующие интегралы. (Не забудьте
+    вернуться к исходной переменной; и константу не забудьте.)
+    \items \multicols 2
+        \item \eq \int \sin (\pi x)\, dx;
+        \item \eq \int x \sin x^2\, dx;
+        \item \homework \eq \int x^2(x^3 + 2)^{12}\, dx;
+            \comment{$\frac{(x^3+2)^{13}}{39}+C$}
+        \item \eq \int e^x \sin e^x\, dx;
+        \item \eq \int \frac{\ln x}{x}\, dx;
+        \item \homework \eq \int \frac{x}{x^2+1}\, dx;
+            \comment{$\\frac{\\ln{\\left(x^{2} + 1 \\right)}}{2}+C$}
+        \item \homework \eq \int (x+1) \sqrt{2x+x^2}\, x;
+            \comment{$\\frac{\\left(x \\left(x + 
+                            2\\right)\\right)^{\\frac{3}{2}}}{3}+C$}
+        \item \eq \int \frac{\cos x}{\sin^2 x} dx;
+        \item \eq \int \frac{\arctg x}{1+x^2} dx.
+        
+\problem
+    Найти интегралы с помощью интегрирования по частям.
+    \items \multicols 2
+        \item \eq \int x \sin 3x\, dx;
+        \item \eq \int xe^{-x}\, dx;
+        \item \homework \eq \int e^x \sin 2x\, dx;
+            \comment{$\\frac{e^{x} \\sin{\\left(2 x \\right)}}{5} - \\frac{2
+                    e^{x} \\cos{\\left(2 x \\right)}}{5}+C$}
+        \item \eq \int \ln x\, dx;
+        \item \homework \eq \int (\ln x)^2\, dx;
+            \comment{$x \\ln{\\left(x \\right)}^{2} - 2 x \\ln{\\left(x
+                        \\right)} + 2 x+C$}
+        \item \homework \eq \int x^5 \ln x \, dx.
+            \comment{$\\frac{x^{6} \\log{\\left(x \\right)}}{6} -
+                \\frac{x^{6}}{36}+C$}
+
+        
+\end{document}

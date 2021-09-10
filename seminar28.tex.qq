@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{needspace}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 28}
+\date{16 декабря 2020}
+\begin{document}
+{\footnotesize
+
+\noindent Некоторые задачи основаны на учебнике \emph{Stewart J. Calculus, Early
+Transcedentals}.}
+
+\problem
+    Докажите, что если ряд сходится абсолютно, то он сходится, то есть если
+    \eq
+        \sum_{n=1}^\infty |a_n| < \infty,
+    то
+    \eq
+        \sum_{n=1}^\infty a_n < \infty.
+\begin{hint}
+    Рассмотрите последовательность $b_n = a_n + |a_n|$. Сходится ли ряд
+    $\sum_{n=1}^\infty b_n$?
+\end{hint}
+\problem
+    Рассмотрим ряд $\sum_{k=1}^\infty a_k$. Пусть существует предел
+    \eq
+        \lim_{k\to \infty} \left|\frac{a_{k+1}}{a_{k}}\right| = c.
+    Докажите, что если $c > 1$, то ряд расходится, а если $c < 1$, то сходится
+    абсолютно. Что может быть при $c=1$?
+\problem
+    Рассмотрим ряд $\sum_{k=1}^\infty a_k$. Пусть существует предел
+    \eq
+        \lim_{n\to \infty} \sqrt[n]{|a_n|} = c.
+    Докажите, что если $c > 1$, то ряд расходится, а если $c < 1$, то сходится
+    абсолютно. Что может быть при $c=1$?
+\problem
+    \needspace{5cm}
+    Сходится ли ряд? Если да, найти его сумму.
+    \items \multicols 2
+        \item \eq \sum_{n=1}^{\infty}\left(\frac{1}{e^n}+\frac{1}{n(n+1)}\right)
+        \item \eq \sum_{n=1}^\infty \frac{k^2}{k^2-1}
+        \item \eq \sum_{n=1}^\infty \frac{1+2^n}{3^n}
+        \item \eq \sum_{n=1}^\infty \frac{n(n+2)}{(n+3)^2}
+        \item \eq \sum_{n=1}^\infty \exp(-2n+3)
+        \item \eq \sum_{n=1}^\infty \frac{2}{n^2-1}
+        \item \eq \sum_{n=1}^\infty \ln \frac{n}{n+1}
+        \item \eq \sum_{n=1}^\infty \frac{2^n}{3^{n-1}}
+\problem
+    При каких значениях $\alpha \in \mathbb R$  сходится ряд
+    \items \multicols 2
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{1}{n^\alpha};
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n^\alpha}?
+\problem
+    Найти значение $p$, при котором ряд сходится
+    \items \multicols 2
+        \item \eq \sum_{n=2}^\infty \frac{1}{n (\ln n)^p}
+        \item \eq \sum_{n=2}^\infty \frac{\ln n}{n^p}
+\problem
+    Сходится ли ряд? Сходится ли он абсолютно?
+    \items \multicols 2
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{\sin 4n}{2^n};
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{n!}{100^n};
+        \item
+            \eq
+                \sum_{n=1}^\infty (-1)^n \frac{n}{\sqrt{n^3+1}};
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{(-1)^n}{\ln n};
+\problem
+    Сходится ли ряд?
+    \items
+        \multicols 2
+        \item
+            \eq
+                \sum_{n=1}^\infty \frac{\sin (1/n)}{\sqrt{n}};
+        \item
+            \eq
+                \sum_{n=1}^\infty (\sqrt[n]{2}-1)^n;
+        \item
+            \eq
+                \sum_{n=1}^\infty (\sqrt[n]{2}-1);
+        \item (*)
+            \eq
+                \sum_{n=1}^\infty \frac{1}{(\ln n)^{\ln n}}.
+                
+\problem
+    Найти сумму ряда
+    \eq
+        \sum_{k=1}^\infty \frac{k}{a^k}
+    при всех значениях $a>0$, при которых ряд сходится.
+\begin{hint}
+    Этот ряд можно представить как бесконечную сумму геометрических прогрессий.
+\end{hint}
+ 
+\end{document}

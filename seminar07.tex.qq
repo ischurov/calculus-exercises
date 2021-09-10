@@ -1,0 +1,128 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 7}
+\date{23 сентября 2020}
+\begin{document}
+\problem
+    Пусть $\lim_{n\to \infty} a_n=+\infty$ и $\lim_{n \to \infty} b_n=\infty$.
+    Чему может равняться значение выражения:
+    \items \multicols 3
+        \item
+            \eq
+                \lim_{n \to \infty} (a_n + b_n);
+        \item \homework
+            \eq
+                \lim_{n \to \infty} (a_n b_n);
+        \item
+            \eq
+                \lim_{n \to \infty} \frac{a_n}{b_n}?
+    Ответ обосновать, привести все необходимые примеры и доказательства.
+
+\problem
+    Пусть $\lim_{n\to \infty} a_n=+\infty$ и $\lim_{n \to \infty} b_n=0$.
+    Чему может равняться значение выражения:
+    \items \multicols 4
+        \item
+            \eq
+                \lim_{n \to \infty} (a_n + b_n);
+        \item
+            \eq
+                \lim_{n \to \infty} (a_n b_n);
+        \item
+            \eq
+                \lim_{n \to \infty} \frac{a_n}{b_n};
+        \item \homework
+            \eq
+                \lim_{n \to \infty} \frac{b_n}{a_n}?
+    Ответ обосновать, привести все необходимые примеры и доказательства.
+\problem
+    Пусть $\lim_{n \to \infty} a_n=A$. Чему может равняться
+    \eq
+        \lim_{n \to \infty} \frac{a_{n+1}}{a_n},
+    если
+    \items \multicols 3
+        \item
+            \eq
+                A\in \mathbb R$, $A\ne 0;
+        \item
+            \eq
+                A = 0;
+        \item \homework
+            \eq
+                A = +\infty?
+\begin{definition}
+    Скажем, что $a_n\to A+0$ (или $a_n \to A^+$) при $n \to \infty$ (говорят:
+    «$a_n$ стремится к $A$ \emph{справа}»), если для всякого $\eps>0$
+    найдётся такое $N$, что для всех $n>N$ выполняется неравенство $A\le a_n < A+ \eps$.
+
+    Аналогично, $a_n \to A-0$ (или $a_n \to A^-$) при $n \to \infty$ (говорят:
+    «$a_n$ стремится к $A$ \emph{слева}»), если для всякого $\eps>0$ найдется такое
+    $N$, что для всех $n>N$ выполняется неравенство $A-\eps < a_n \le A$.
+\end{definition}
+\problem
+    Пусть известно, что $a_n \to 0^+$ при $n\to\infty$. Что вы можете сказать про
+    \eq
+        \lim_{n \to \infty} \frac{1}{a_n}?
+\problem \homework
+    Пусть известно, что $a_n \to -\infty$ при $n \to \infty$. Куда и с какой
+    стороны стремится $1/a_n$?
+
+\problem (Перенесено из семинара 4)
+    Для любой последовательности $\set{a_n}$ рассмотрим последовательность её средних
+    арифметических $b_n=\frac{a_1+\ldots+a_n}{n}$.
+    \items
+        \item 
+            Пусть $\lim\limits_{n\rightarrow\infty} a_n=a$. Докажите, что
+            $\lim\limits_{n\rightarrow\infty} b_n=a$.
+        \item \homework
+            Пусть $\lim\limits_{n\rightarrow\infty} b_n=a$. Верно ли, что
+            $\lim\limits_{n\rightarrow\infty} a_n=a$?
+
+\section*{Бесконечно убывающая геометрическая прогрессия}
+Рассмотрим последовательность $\\{a_n\\}$. Сумма $a_1 + a_2 + \ldots +
+a_k$ кратко обозначается следующим образом:
+$$
+    \sum_{i=1}^{k} a_i.
+$$
+Например,
+$$
+    \sum_{i=1}^3 \frac{1}{i}=\frac{1}{1}+\frac{1}{2}+\frac{1}{3}.
+$$
+Рассмотрим теперь последовательность $\{s_k\}$:
+$$
+    s_k=\sum_{i=1}^k a_i.
+$$
+Если существует $\lim\limits_{k\to \infty} s_k$, его обозначают через
+$$
+    \sum_{i=1}^\infty a_i = a_1 + a_2 + \ldots
+$$
+\problem
+    Рассмотрим геометрическую прогрессию $b_n=c q^{n-1}$.
+    \items
+        \item
+            Докажите, что
+            $$
+                \sum_{i=1}^n b_n = c\frac{q^n-1}{q-1}.
+            $$
+        \item
+            Докажите, что при $|q|<1$
+            $$
+                \sum_{i=1}^\infty b_n = c\frac{1}{1-q}.
+            $$
+\end{document}
+

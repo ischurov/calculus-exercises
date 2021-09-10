@@ -1,0 +1,138 @@
+\documentclass[a4paper,12pt]{article}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 18}
+\date{12 ноября 2020}
+\begin{document}
+
+\begin{theorem}
+Пусть функция $f$ определена на отрезке $[a, b]$, непрерывна на этом отрезке и
+обратима. Пусть она дифференцируема в точке $x_0 \in (a, b)$ и $f'(x_0)\ne 0$.
+Тогда обратная функция $f^{-1}$ дифференцируема в точке $y_0=f(x_0)$ и её
+производная равна
+\eq
+    (f^{-1})'(y_0)=\frac{1}{f'(x_0)}=\frac{1}{f'(f^{-1}(y_0))}
+\end{theorem}
+\problem
+    С помощью теоремы о производной обратной функции найдите производные
+    следующих функций
+    \items \multicols 3
+        \item $\sqrt{x}$;
+        \item \homework $\sqrt[3]{x}$;
+            \comment{$\frac{1}{3\sqrt[3]{x^2}}$}
+        \item $\ln x$;
+        \item $\arcsin x$;
+        \item \homework $\arccos x$;
+            \comment{$\frac{-1}{\sqrt{1-x^2}}$}
+        \item \homework $\arctg x$.
+            \comment{$\frac{1}{x^{2} + 1}$}
+\problem
+    Пользуясь равенством $a^x=e^{x \ln a}$ найти производную функции
+    \items \multicols 3
+        \item $a^x$;
+        \item $x^x$;
+        \item \homework $x^{(x^x)}$.
+            \comment{$x^{x^{x} - 1} \left(x^{x} + x^{x + 1}
+                    \left(\log{\left(x \right)} + 1\right) \log{\left(x
+                            \right)}\right)$}
+\problem
+    Найдите производные
+    \items 
+        \item $\log_5 x$;
+        \item \homework 
+            $\arctg \sqrt{|2x|}$;
+            \comment{$\frac{\sqrt{2} \operatorname{sign}{\left(x \right)}}{2
+                    \left(2 \left|{x}\right| + 1\right)
+                    \sqrt{\left|{x}\right|}}$}
+        \item $e^{4 \ln x}$;
+        \item \homework $e^{f(x)}$, если производная $f(x)$ известна;
+            \comment{$f'(x)e^{f(x)}$}
+        \item  $\ln f(x)$, если производная $f(x)$ известна;
+        \item \homework \skiptest 
+            $(\log_3 x)^{x^2+3}$.
+            \comment{$\left(\frac{\log{\left(x \right)}}{\log{\left(3
+                            \right)}}\right)^{x^{2} + 3} \left(2 x
+                    \log{\left(\frac{\log{\left(x \right)}}{\log{\left(3
+                                    \right)}} \right)} + \frac{x^{2} + 3}{x
+                        \log{\left(x \right)}}\right)$}
+
+\problem
+    Часто при графическом изображении зависимостей используют
+    \emph{логарифмические шкалы}, то есть по осям откладывают не сами значения
+    величин, а их логарифмы. Логарифмическая шкала удобна, если интересующая нас
+    величина меняется «на порядки» — например, зарплата конкретного человека
+    может составлять 10 тыс. рублей в месяц, может 100 тыс. рублей, а может и
+    десятки миллионов руб. При этом мы хотели бы на графике отразить разницу как
+    между 10 тыс. и 100 тыс., так и между 100 тыс. и десятком миллионов. Если
+    взять обычную линейную шкалу и отмасштабировать её таким образом, чтобы на
+    графике уместились точки, соответствующуие ста миллионам, то разница между
+    10 и 100 тысячами станет невидимой глазу. Логарифмическая шкала позволяет
+    справиться с этой проблемой.
+
+    Рассмотрим графики 
+    \begin{center}
+    \begin{tikzpicture} [x=1cm,y=1cm]
+        \draw[help lines] (-2, -2) grid (2, 2);
+        \draw[thick] plot[domain=-1.8:1.8,smooth,samples=200] (\x, {\x});
+        \draw[->,thin] (-2,0) -- (2,0);
+        \draw[->,thin] (0,-2) -- (0,2);
+        \node[below left,black] at (0,0) {$0$};
+        \node[below left,black] at (0,1) {$1$};
+        \node[below left,black] at (1,0) {$1$};
+    \end{tikzpicture}
+    \begin{tikzpicture} [x=1cm,y=1cm]
+        \draw[help lines] (-2, -2) grid (2, 2);
+        \draw[thick] plot[domain=-1:1,smooth,samples=200] (\x, {2*\x});
+        \draw[->,thin] (-2,0) -- (2,0);
+        \draw[->,thin] (0,-2) -- (0,2);
+        \node[below left,black] at (0,0) {$0$};
+        \node[below left,black] at (0,1) {$1$};
+        \node[below left,black] at (1,0) {$1$};
+    \end{tikzpicture}
+    \begin{tikzpicture} [x=1cm,y=1cm]
+        \draw[help lines] (-2, -2) grid (2, 2);
+        \draw[thick] plot[domain=-1.8:1.8,smooth,samples=200] (\x, {-\x});
+        \draw[->,thin] (-2,0) -- (2,0);
+        \draw[->,thin] (0,-2) -- (0,2);
+        \node[below left,black] at (0,0) {$0$};
+        \node[below left,black] at (0,1) {$1$};
+        \node[below left,black] at (1,0) {$1$};
+    \end{tikzpicture}
+    \end{center}
+    Записать зависимость формулой и нарисовать график в обычных осях $(x, y)$,
+    если
+    \items
+        \item вертикальная ось является логарифмической (то есть по вертикали
+            откладывается $\ln y$), а горизонтальная — обычной;
+        \item вертикальная ось является обычной, а горизонтальная —
+            логарфимической;      
+        \item обе оси являются логарифмическими.
+\problem
+    Укажите и классифицируйте точки разрыва. Найдите локальные и глобальные
+    максимумы и минимумы, промежутки монотонности, асимптоты для следующих
+    функций. Нарисуйте эскизы графиков.
+    \items \multicols 3
+        \item
+            $f(x)=\ln x + \frac{x^2}{2}-6x$;
+        \item \skiptest
+            \eq f(x)=(1+x)^{\frac{1}{x}};
+        \item \homework
+            \eq f(x)=\ln(1+e^{-x}).
+            \comment{всюду непрерывна, всюду убывает, имеет наклонную асимптоту
+                $y=-x$ и горизонтальную асимптоту $y=0$}
+\problem
+    Рассмотрим функцию
+    $$f(x)=x^{2} \ln(2x).$$
+    Найти односторонний предел функции в точке $x=0$,
+    доопределить функцию в этой точке по непрерывности, то есть рассмотреть
+    функцию $\tilde f$, которая совпадает с $f$ во всех точках, кроме $x=0$, а в
+    $x=0$ принимает такое значение, что $\tilde f$ односторонне непрерывна в
+    этой точке. Имеет ли функция $\tilde f$ односторонюю производную в точке
+    $x=0$? Если да, найти её. Найти односторонний предел производной $\tilde f$
+    при $x \to 0^+$. Провести полное исследование $\tilde f$, построить её
+    график.
+\end{document}

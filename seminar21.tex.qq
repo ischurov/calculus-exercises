@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{article}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\title{Семинар 21}
+\date{20 ноября 2020}
+\begin{document}
+\begin{definition}
+\emph{Многочленом Тейлора} степени $n$ для функции $f$ в точке $x_0$ называется
+следующее выражение:
+\eq
+    T_n(x)=\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k,
+где $f^{(k)}$ — это $k$-я производная $f$, $f^{(0)}=f$.
+\end{definition}
+
+\problem
+    Найти многочлены Тейлора произвольной степени $n$ в заданной точке $x_0$ для
+    функций
+    \items \multicols 2
+        \item $x^3 - 3x^2+3x+1$, $x_0=4$;
+        \item $e^{2x}$, $x_0=0$;
+        \item $\sin x$, $x_0=0$;
+        \item \homework $\cos x$, $x_0=0$;
+            \comment{$1-\frac{x^2}{2}+\ldots+(-1)^{k}\frac{x^{2k}}{(2k)!}+\ldots$}
+        \item \homework $\ln x$, $x_0=1$;
+            \comment{$(x-1)+\frac{(x-1)^2}{2}+\frac{(x-1)^3}{3}+\ldots+\frac{(x-1)^k}{k}+\ldots$}
+        \item \homework $\frac{1}{1-x}$, $x_0=0$.
+            \comment{$1+x+x^2+\ldots+x^k+\ldots$}
+
+\begin{theorem}[Формула Тейлора с остаточным членом в форме Пеано]
+Если существует $n$-я производная функции $f$ в точке $x=x_0$, то
+\eq \label{eq:taylor-peano}
+    f(x)=\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k + o((x-x_0)^n)
+при $x\to x_0$.
+\end{theorem}
+
+Если функцию $f$ представляют в виде~\eqref{eq:taylor-peano}, также говорят, что
+\emph{$f$ разложили в ряд Тейлора до степени $n$ (с остаточным членом в форме
+Пеано)} в точке $x_0$ (или вблизи точки $x_0$).
+
+\problem
+    Найти разложения следующих функций в ряд Тейлора до степени $n$ включительно
+    (то есть остаток должен быть $o(x^n)$ при $x\to 0$) в точке $0$:
+    \items
+        \item $\sin(\sin x),\quad n=3$
+        \item \homework $\ln(\cos x),\quad n=6$
+            \comment{$- \frac{x^{2}}{2} - \frac{x^{4}}{12} -
+                \frac{x^{6}}{45}+o(x^6)$}
+        \item $\sqrt{1-2x+x^3}-\sqrt[3]{1-3x+x^2},\quad n=2$
+\problem
+    Вычислить пределы:
+    \items \multicols 2
+        \item 
+            \eq
+                \lim_{x\to 0}\frac{e^{2x}-1-\sin 2x}{\cos x -1};
+        \item  \homework
+            \eq
+                \lim_{x\to 0}\frac{\ln(1+x)}{\cos x -1}; 
+            \comment{$\infty$}
+        \item 
+            \eq
+                \lim_{x\to 0}\frac{\sin x + \tg x}{x^3};
+        \item \homework
+            \eq
+                \lim_{x\to 0}\frac{\sin x - x\cos x}{x^3};
+            \comment{$1/3$}
+        \item 
+            \eq
+                \lim_{x\to 0} \frac{\ln (1+x) -x}{\sin (x^2)};
+        \item 
+            \eq
+                \lim_{x \to 0^+} \frac{\ln\left(1+\frac{1}{x}\right)}
+                                     {1+\frac{1}{x}}.
+        \item \homework
+            \eq
+                \lim_{x \to 0} \frac{\sin (2x^2 -x^3)}{\ln \cos x};
+            \comment{$-4$}
+        \vskip 0.2em
+        \item \homework
+            \eq
+                \lim_{x\to -\infty} xe^{x};
+            \comment{$0$}
+        \item \homework
+            \eq
+                \lim_{x \to 1} \frac{1-x+\ln x}{1+\cos \pi x};
+            \comment{$-1/\pi^2$}
+        \vskip 0.2em
+        \item
+            \eq
+                \lim_{x \to 1} \frac{x^a -1}{x^b-1};
+        \item \homework
+            \eq
+                \lim_{x \to \pi/2} \frac{\cos(\cos(x))-1}{\sin(\sin (x) - 1)}.
+            \comment{$1$}
+
+\problem (*)
+    Дана функция
+    \eq
+        f(x)=
+        \begin{cases}
+            e^{-\frac{1}{x}}, & x> 0 \\\\
+            0, & x\le 0 
+        \end{cases}
+    \begin{enumerate}
+        \\item Докажите, что функция $f$ является бесконечно дифференцируемой
+            на всей числовой прямой.
+        \\item Вычислите все полиномы Тейлора для $f(x)$, $x_0=0$.
+        \\item Для каких $x$ справедливо соотношение $T_n(x)\to f(x)$ при $n\to \infty$?
+    \end{enumerate}	
+
+\problem (*)
+    Докажите, что существует такая функция $f$, определённая на всей прямой и
+    \items
+        \item непрерывная
+        \item дифференцируемая
+        \item дважды дифференцируемая
+        \item бесконечно дифференцируемая
+    во всех точках, что $f(x)=0$ при $|x| >2$ и $f(x)=1$ при $|x|<1$.
+
+\end{document}
+
+

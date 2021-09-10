@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{needspace}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+\usepackage{tikz,pgf,pgfplots}
+\tikzset{>=latex,graph/.style={thick}}
+\title{Семинар 25}
+\date{4 декабря 2020}
+\begin{document}
+{\footnotesize
+
+\noindent Некоторые задачи основаны на учебнике \emph{Stewart J. Calculus, Early
+Transcedentals}.}
+
+\problem
+    Найти определенные интегралы
+    \items \multicols 2
+        \item \homework
+            \eq \int_0^2 (x-1)^{25}\,dx
+            \comment{$0$}
+        \item
+            \eq \int_0^1 x^2(1+2x^3)^5\, dx
+        \item
+            \eq \int_0^7 \sqrt{4 + 3x}\,dx
+        \item \homework
+            \eq \int_1^2 \frac{e^{1/x}}{x^2}\,dx
+            \comment{$e-\sqrt{e}$}
+
+        \item
+            \eq \int_1^2 x\sqrt{x-1} dx
+        \item \homework
+            \eq \int_e^{e^4} \frac{dx}{x\sqrt{\ln x}}
+            \comment{$2$}
+        
+\problem
+    Найти интеграл с помощью интегрирования по частям и других методов
+    \items \multicols 2
+        \item
+            \eq \int x^2 \sin \pi x\, dx
+        \item \homework
+            \eq \int \ln (2x+1)\, dx
+            \comment{$x \\ln{\\left(2 x + 1 \\right)} - x +
+                \\frac{\\ln{\\left(2 x + 1 \\right)}}{2}+C$}
+        \item
+            \eq \int_1^2 \frac{\ln x}{x^2}\, dx
+        \item \homework
+            \eq \int_0^\pi x^3 \cos x\, dx
+            \comment{$12 - 3 \\pi^{2}$}
+        \item \homework
+            \eq \int_0^1 (x^2+1)e^{-x}\, dx
+            \comment{$3-6/e$}
+        \item
+            \eq \int_1^2 x^4 (\ln x)^2 \, dx
+        \item
+            \eq
+                \int \cos \sqrt{x}\, dx
+        \item \homework
+            \eq \int x \ln (1+x) \, dx
+            \comment{$\\frac{x^{2} \\ln{\\left(x + 1 \\right)}}{2} -
+                \\frac{x^{2}}{4} + \\frac{x}{2} - \\frac{\\ln{\\left(x + 1
+                                                                      \\right)}}{2}+C$}
+        \item 
+            \eq \int_{1/e}^e |\ln x|\,dx
+        \item \skiptest
+            \eq \int e^x \sin x \, dx
+\problem
+    Докажите, что для положительных $a, b$, верно равенство
+    \eq
+        \int_0^1 x^a(1-x)^b\, dx=\int_0^1 x^b(1-x)^a \, dx.
+\problem
+    Функция $f$ называется \emph{периодической}, если существует такое $T>0$,
+    что $f(x+T)=f(x)$ для всех $x \in \mathbb R$. Докажите, что
+    \eq
+        \int_a^{a+T} f(x)\, dx=\int_b^{b+T} f(x)\, dx
+    для любых $a, b$. (Иными словами, интеграл от периодической функции по
+    периоду не зависит от выбора отрезка интегрирования.)
+\problem \homework
+    Пусть функция $f$ периодическая и $\int_{a}^{a+T} f(x)\,dx=0$. Докажите, что
+    $\int f(x)\,dx$ — периодическая функция.
+\problem \homework
+    Пусть функция $f$ периодическая и интегрируемая. Докажите, что $\int
+    f(x)\,dx$ представляется в виде суммы периодической и линейной функции.
+\problem
+    Рассмотрим интеграл
+    \eq
+        \int_{0}^{1}\sqrt{1-x^2}dx.
+    \items
+        \item
+            Найти его значение с помощью замены $x=\sin t$.
+        \item
+            Можно ли при этой замене в качестве новых пределов интегрирования
+            взять числа $\pi$ (нижний) и $\pi/2$ (верхний). Почему?
+\problem
+    Найти интеграл
+    \items \multicols 2
+        \item
+            \eq \int \frac{x^2}{x+4}dx
+        \item
+            \eq \int \frac{dt}{(t+4)(t-1)}
+        \item
+            \eq \int_3^4 \frac{x^3-2x^2-4}{x^3-2x^2}dx
+        \item
+            \eq \int \frac{dx}{(x-1)(x^2+9)}
+        \item
+            \eq \int \frac{dx}{x(x^2+4)^2}
+        \item
+            \eq \int_0^1 \frac{x\, dx}{x^2+4x+13}
+\end{document}

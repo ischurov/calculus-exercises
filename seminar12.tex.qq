@@ -1,0 +1,179 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 12}
+\date{11 октября 2019}
+\begin{document}
+\problem
+    Пользуясь определением предела по Гейне, докажите, что предела не
+    существует.
+    \items \multicols 2
+        \item
+            \eq
+                \lim_{x\to +\infty} \sin x;
+        \item \homework
+            \eq
+                \lim_{x\to +\infty} \exp x.
+\problem
+    Пользуясь арифметикой пределов (если она применима) или определенем (по Коши
+    или по Гейне) найти пределы (если предел равен бесконечности, плюс
+    бесконечности или минус бесконечности, докажите это)
+    \items\multicols 2
+        \item \eq \lim\limits_{x\to \infty} \frac{x^2+9}{x^2-9};
+        \item \eq \lim\limits_{x\to 3} \frac{x^2+9}{x^2-9};
+        \item \homework
+            \eq \lim\limits_{x\to -3} \frac{x^2+9}{x^2-9};
+        \item \eq \lim\limits_{x\to -\infty} 2^x;
+        \item \eq \lim\limits_{x\to +\infty} \frac{e^x}{x^2};
+        \item \eq \lim\limits_{x\to -\infty} \frac{e^x}{x^2};
+        \item \eq \lim\limits_{x\to -\infty} x^2 e^x;
+        \item \eq \lim\limits_{x\to 0^+} e^{1/x};
+        \item \eq \lim\limits_{x\to 0^-} e^{1/x};
+        \item \eq \lim\limits_{x\to 0^-} x e^{1/x};
+        \item \homework
+            \eq \lim\limits_{x\to 0^-} x^2 e^{1/x};
+\problem
+    Найти естественную область определения функции, заданной формулой. (То есть
+    множество всех $x$, при которых выражение, заданное формулой, определено.)
+    Найти все вертикальные, горизонтальные и наклонные асимптоты. Построить
+    эскиз графика.
+    \comment
+        Является ли функция ограниченной?
+        Найти все точки разрывов, установить их тип (скачок, устранимый разрыв,
+        полюс, существенный разрыв). Существуют ли такие точки, что функцию можно в
+        этой точке до- или переопределить и сделать таким образом непрерывной в этой
+        точке? 
+    \items \multicols 3
+        \item 
+            \eq
+                \frac{x+2}{x^2-1}
+        \item \homework
+            \eq
+                \frac{x+2}{x^2+1}
+        \item
+            \eq
+                \frac{x^2-1}{x-4}
+        \item
+            \eq
+                \frac{x^2-1}{x-1}
+        \item \homework
+            \eq
+                \frac{2x^2-1}{x^2-4}
+        \comment
+            \item
+                \eq
+                    \sqrt{x^2-1}
+
+            \item \homework
+                \eq
+                    \sqrt{x^2+1}
+        \item
+            \eq
+                \sqrt{\frac{x^4-1}{x+1}}
+        \item
+            \eq
+                \frac{\sin x}{x}
+        \vskip 0.3em
+        \item
+            \eq
+                \frac{1}{\sin{\frac{1}{x}}}
+        \vskip 0.3em
+        \item
+            \eq
+                \frac{\sin\frac{1}{x}}{x}
+        \item
+            \eq
+                x \sin \frac{1}{x}
+        \item
+            \eq
+                x + \sin x
+        \item
+            \eq
+                x + \frac{\sin x}{x}
+        \item
+            \eq
+                \tg x
+        \item \homework
+            \eq
+                x\sin x
+        \item
+            \eq
+                e^{\frac{1}{x}}
+        \item
+            \eq
+                e^{\frac{1}{x^2}}
+        \item
+            \eq
+                e^{-\frac{1}{x^2}}
+        \item
+            \eq
+                \begin{cases}
+                    1,& x \in \mathbb Q\\\\
+                    0,& x \not \in \mathbb Q
+                \end{cases}
+        \item
+            \eq
+                \begin{cases}
+                    x,& x \in \mathbb Q\\\\
+                    0,& x \not \in \mathbb Q
+                \end{cases}
+        \item
+            \eq
+                \frac{|x|}{x}
+        \vskip 0.3em
+        \item
+            \eq
+                \frac{x^3+3^{x}}{x^2+2^x}
+        \item \homework
+            \eq
+                \frac{x^2-2^{x}}{x^2+3^x}
+        \item \homework
+            \eq
+                \frac{2^x-3^{-x}}{3^x+2^{-x}}
+        \item \homework
+            \eq
+                \frac{x+\sin x}{x^2+1}
+                
+\problem
+    Докажите, что
+    \eq
+        \lim_{x \to 0} \exp x = 1.
+    \textbf{Подсказка.} Воспользуйтесь представлением $\exp x =
+    \sum_{k=0}^\infty \frac{x^k}{k!}$.
+
+\problem \homework
+    Докажите, что
+    \eq
+        \lim_{x \to x_0} \exp x=\exp x_0.
+    \textbf{Подсказка.} Воспользуйтесь тем фактом, что
+    $\exp(x+y)=\exp(x)\exp(y)$ и предыдущей задачей.
+
+\problem \homework
+    Пользуясь определением предела (по Коши или по Гейне) докажите, что для
+    всякого $x_0>0$,
+    \eq
+        \lim_{x\to x_0} \sqrt{x}=\sqrt{x_0}.
+\problem \homework
+    Студент K. записал определение предела функции следующим образом:
+    $$\lim_{x\to x_0} f(x)=a \Leftrightarrow (\forall \eps > 0 \exists \delta >
+    0\forall x\colon |x-x_0|<\delta \Rightarrow |f(x)-a|<\eps).$$
+    В этом определении есть ошибка (найдите её). Что вы можете сказать про
+    функцию, которая «имеет предел» согласно определению студента K.?
+
+\end{document}
+
+

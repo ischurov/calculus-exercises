@@ -1,0 +1,114 @@
+\documentclass[a4paper,12pt]{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+% \usepackage{amsfonts}
+% \usepackage[T1,T2A]{fontenc}
+% \usepackage[russian]{babel}
+
+% autocompile publish
+\usepackage{math-hse}
+\usepackage{multicol}
+% \theoremstyle{definition}
+%\newtheorem{problem}{Задача}
+% \renewcommand{\comment}[1]{\emph{#1}}
+\newcommand{\GCD}{\text{НОД}}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbN}{\mathbb N}
+\title{Семинар 11}
+\date{11 октября 2019}
+\begin{document}
+\problem
+    Построить график функции и найти пределы, или доказать, что они не
+    существуют
+    $$f(x)=\begin{cases}
+        x^2, & x < 1 \\\\
+        -x^2, & x \ge 1
+    \end{cases}$$
+    \items \multicols 4
+        \item \eq \lim_{x\to -1} f(x)
+        \item \eq \lim_{x\to 1} f(x)
+        \item \eq \lim_{x\to 1^+} f(x)
+        \item \homework 
+            \eq \lim_{x\to 1^-} f(x)
+\problem
+    При каком значении параметра $\alpha$ существует предел
+    функции 
+    $$f(x)=\begin{cases}
+        \alpha x^2, & x > 2 \\\\
+        5\alpha^2, & x = 2 \\\\
+        x + 7, & x > 2
+    \end{cases}$$
+    при $x\to 2$?
+\problem
+    Приведите пример ограниченной функции, определённой на всей числовой прямой,
+    имеющей в точке $0$ предел справа, но не имеющей предела слева.
+\problem
+    Пользуясь определением предела по Коши доказать утверждения арифметики
+    пределов: если существует $\lim_{x \to a} f(x)$ и $\lim_{x\to a} g(x)$, то
+    \items
+        \item
+            \eq \lim\limits_{x\to a} (f(x)+g(x)) = \lim\limits_{x\to a} f(x) +
+                \lim\limits_{x \to a} g(x);
+        \item \homework
+            \eq \lim\limits_{x\to a} (f(x)\cdot g(x)) = \lim\limits_{x\to a}
+                f(x)\cdot \lim\limits_{x \to a} g(x);
+        \item \homework
+            \eq \lim\limits_{x\to a} \frac{f(x)}{g(x)} =
+                \frac{\lim\limits_{x\to a} f(x)}{\lim\limits_{x \to a} g(x)}
+            \ при условии, что $\lim_{x\to a} g(x)\ne 0$.
+        \item \homework
+            \eq \lim\limits_{x\to a} \sqrt{f(x)}=\sqrt{\lim\limits_{x\to
+                    a}f(x)}
+            \ при условии, что $\lim_{x\to a} f(x) \ge 0$.
+\problem
+    Пользуясь арифметикой пределов (если она применима) или определенем найти
+    пределы
+    \items\multicols 2
+        \item \eq \lim\limits_{x \to 2} (x^4 + 3x^2 - x + 1);
+        \item \homework
+            \eq \lim\limits_{t \to -1} (t^2+1)^3(t+3)^5;
+        \item \eq \lim\limits_{h \to 0}\frac{(4+h)^2-16}{h};
+        \item \eq \lim\limits_{x \to -2}\frac{x+2}{x^3+8};
+        \item \eq \lim\limits_{h \to 0} \frac{(2+h)^3-8}{h};
+        \item  \homework
+            \eq 
+                \lim\limits_{t\to 0}\left(\frac{1}{t}-\frac{1}{t^2+t}\right);
+        \item \eq \lim\limits_{x\to -4} \frac{\sqrt{x^2+9}-5}{x+4}.
+        \comment
+            \item \eq \lim\limits_{x\to \infty} \frac{x^2+9}{x^2-9};
+            \item \eq \lim\limits_{x\to 3} \frac{x^2+9}{x^2-9};
+            \item \eq \lim\limits_{x\to +\infty} \frac{e^x}{x^2};
+            \item \eq \lim\limits_{x\to -\infty} \frac{e^x}{x^2};
+            \item \eq \lim\limits_{x\to -\infty} x^2 e^x;
+            \item \eq \lim\limits_{x\to 0^+} e^{1/x};
+            \item \eq \lim\limits_{x\to 0^-} e^{1/x};
+            \item \eq \lim\limits_{x\to 0^-} x^2 e^{1/x};
+\problem
+    Придумать и доказать теорему о двух миллиционерах для пределов
+    функций.
+\problem
+    С помощью теоремы о двух миллиционерах доказать, что
+    \eq
+        \lim_{x\to 0} (x^2+5x)\sin\frac{1}{x^2}=0.
+\problem \homework
+    Докажите, что если функция $f$ ограничена в проколотой окрестности точки
+    $x_0$ (то есть существует такая константа $C$ и такая проколотая окрестность
+    точки $x_0$, что $|f(x)|<C$ для всех $x$ из этоу окрестности) и
+    $\lim\limits_{x\to x_0}g(x)=0$, то $\lim\limits_{x\to x_0} f(x) g(x)=0$.
+\begin{definition}
+    Точка $a$ называется \emph{предельной точкой} функции $f$ в точке $x_0$ если
+    для всякого $\eps>0$ и всякой $\delta>0$ найдётся такая точка $x$, лежащая в
+    проколотой $\delta$-окрестности $x_0$, что $f(x)$ лежит в $\eps$-окрестности точки $a$.
+\end{definition}
+\problem
+    Докажите, что точка $a$ является предельной точкой функции $f$ в точке $x_0$
+    тогда и только тогда, когда существует такая последовательность $\{x_n\}$,
+    сходящаяся к $x_0$, $x_n\ne x_0$, что $f(x_n)$ сходится к $a$.
+\problem \homework
+    Докажите, что если ограниченная функция, определённая в левой
+    полуокрестности некоторой точки, не имеет предела слева в этой точке, то её
+    множество предельных точек в этой точке имеет более одного элемента.
+\end{document}
+
+
